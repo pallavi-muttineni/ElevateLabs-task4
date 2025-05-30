@@ -14,7 +14,7 @@ This project demonstrates a basic responsive website built with HTML and CSS. It
 * CSS3: For styling and layout, including responsive design with Flexbox and Media Queries.
 ## Live Demo
 
-Experience the live website here: [https://pallavi-muttineni.github.io/Elevatelabs-task4/](https://pallavi-muttineni.github.io/Elevatelabs-task4/)
+Experience the live website here: [https://pallavi-muttineni.github.io/ElevateLabs-task4/](https://pallavi-muttineni.github.io/ElevateLabs-task4/)
 ## How to Run Locally
 
 To get a local copy up and running, follow these simple steps.
