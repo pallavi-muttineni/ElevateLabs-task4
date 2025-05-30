@@ -1,0 +1,215 @@
+/* Universal Box-Sizing for easier layout */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Site Header */
+.site-header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    display: flex; /* Use flexbox for desktop header */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px; /* Add some padding */
+}
+
+.site-header .logo {
+    margin: 0;
+    font-size: 2em;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Horizontal nav items for desktop */
+}
+
+.main-nav li {
+    margin-left: 20px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.main-nav a:hover {
+    background-color: #555;
+}
+
+/* Main Content Wrapper - FIXED WIDTH for desktop */
+.main-content {
+    max-width: 960px; /* FIXED WIDTH for desktop */
+    margin: 20px auto; /* Center the content */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Features Section - Desktop will have 3 columns */
+.features {
+    display: flex; /* Use flexbox for feature items */
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+    margin-bottom: 30px;
+}
+
+.feature-item {
+    flex: 1; /* Distribute space evenly */
+    min-width: 300px; /* Minimum width for each item on desktop */
+    padding: 20px;
+    margin: 10px; /* Space between items */
+    background-color: #e9e9e9;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* About Us Section */
+.about-us {
+    margin-bottom: 30px;
+}
+
+/* Site Footer */
+.site-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Ensure images scale down by default */
+img {
+    max-width: 100%; /* Important for all images */
+    height: auto;    /* Maintain aspect ratio */
+    display: block;  /* Remove extra space below images */
+}
+/* style.css - (existing desktop styles are above this line) */
+
+/* =========================================== */
+/* MEDIA QUERIES FOR RESPONSIVE DESIGN       */
+/* =========================================== */
+
+/* For screens smaller than or equal to 768px (common breakpoint for tablets/laptops) */
+@media screen and (max-width: 768px) {
+    /* Mobile-specific styles will go here */
+
+    /* ------------------------------------- */
+    /* 1. Navigation Menu Adjustments */
+    /* ------------------------------------- */
+    header {
+        flex-direction: column; /* Stack header content */
+        padding: 15px;
+    }
+    header h1 {
+        margin-bottom: 15px; /* Space between title and nav */
+        font-size: 2.2em; /* Slightly smaller title */
+    }
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center; /* Center them */
+        padding: 0; /* Remove default padding */
+        width: 100%; /* Make nav list full width */
+    }
+    nav li {
+        margin: 5px 0; /* Add vertical margin between nav items */
+        width: 90%; /* Make each list item take up most of the width */
+        text-align: center;
+    }
+    nav a {
+        padding: 10px; /* Increase tap area */
+        display: block; /* Make link fill the list item */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle separator */
+    }
+    nav li:last-child a {
+        border-bottom: none; /* No border on the last item */
+    }
+
+    /* ------------------------------------- */
+    /* 2. Main Layout Adjustments (Columns) */
+    /* ------------------------------------- */
+    .container {
+        margin: 10px auto; /* Reduce margin */
+        padding: 0 10px; /* Reduce padding */
+    }
+    .hero-section {
+        padding: 30px 15px; /* Reduce padding */
+    }
+    .hero-section h1 {
+        font-size: 2em; /* Smaller hero heading */
+    }
+    .hero-section p {
+        font-size: 1em; /* Smaller hero text */
+    }
+
+    .columns {
+        flex-direction: column; /* Stack columns vertically */
+        gap: 15px; /* Adjust gap */
+    }
+    .column {
+        min-width: unset; /* Remove min-width constraint */
+        width: 100%; /* Make each column full width */
+        padding: 15px; /* Adjust padding */
+    }
+
+    /* ------------------------------------- */
+    /* 3. Font Size Adjustments */
+    /* ------------------------------------- */
+    h2 {
+        font-size: 1.5em; /* Smaller heading 2 */
+    }
+    p {
+        font-size: 0.95em; /* Slightly smaller paragraph text */
+    }
+
+    /* ------------------------------------- */
+    /* 4. Footer Adjustments */
+    /* ------------------------------------- */
+    footer {
+        padding: 15px;
+        font-size: 0.85em;
+    }
+}
+
+/* Optional: Another breakpoint for very small phones (e.g., max-width: 480px) */
+@media screen and (max-width: 480px) {
+    /* Even more specific styles for tiny screens if needed */
+    .hero-section h1 {
+        font-size: 1.8em;
+    }
+    .hero-section p {
+        font-size: 0.9em;
+    }
+    button {
+        padding: 10px 20px; /* Make buttons slightly smaller */
+        font-size: 0.9em;
+    }
+}
