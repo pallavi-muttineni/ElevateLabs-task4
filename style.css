@@ -13,195 +13,197 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
 }
 
 /* Site Header */
-.site-header {
+header { /* Removed .site-header as it's not in HTML */
     background-color: #333;
     color: white;
     text-align: center;
     display: flex; /* Use flexbox for desktop header */
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px; /* Add some padding */
+    justify-content: space-between; /* Space items */
+    align-items: center; /* Vertically center */
+    padding: 0 40px; /* Add some padding */
 }
-
-.site-header .logo {
+header h1 { /* Matches header > h1 in HTML */
     margin: 0;
     font-size: 2em;
 }
 
-.main-nav ul {
+/* Main Navigation */
+nav ul { /* Matches nav > ul in HTML */
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex; /* Horizontal nav items for desktop */
 }
-
-.main-nav li {
+nav li { /* Matches nav > ul > li in HTML */
     margin-left: 20px;
 }
-
-.main-nav a {
+nav a { /* Matches nav > ul > li > a in HTML */
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
-    display: block;
+    padding: 10px 15px; /* Default padding for desktop nav links */
+    display: block; /* Make link fill space */
+}
+nav a:hover { /* Matches nav > ul > li > a on hover */
+  background-color: #555;
 }
 
-.main-nav a:hover {
-    background-color: #555;
-}
-
-/* Main Content Wrapper - FIXED WIDTH for desktop */
-.main-content {
-    max-width: 960px; /* FIXED WIDTH for desktop */
-    margin: 20px auto; /* Center the content */
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+/* Container */
+.container { /* Matches div class="container" in HTML */
+    max-width: 1200px; /* Max width for desktop content */
+    margin: 20px auto; /* Center on desktop */
+    padding: 0 20px; /* Default padding */
+    background-color: white; /* Added based on earlier full CSS */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Added based on earlier full CSS */
+    border-radius: 8px; /* Added based on earlier full CSS */
 }
 
 /* Hero Section */
-.hero {
+.hero-section { /* Matches section class="hero-section" in HTML */
+    background-color: #007bff;
+    color: white;
+    padding: 50px 20px;
     text-align: center;
-    margin-bottom: 30px;
-}
-
-.hero h2 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.2em;
     margin-bottom: 20px;
 }
-
-/* Features Section - Desktop will have 3 columns */
-.features {
-    display: flex; /* Use flexbox for feature items */
-    justify-content: space-between;
-    flex-wrap: wrap; /* Allow items to wrap if needed */
-    margin-bottom: 30px;
+.hero-section h1 { /* Matches .hero-section > h1 in HTML */
+    font-size: 3em;
+    margin-bottom: 10px;
 }
-
-.feature-item {
-    flex: 1; /* Distribute space evenly */
-    min-width: 300px; /* Minimum width for each item on desktop */
-    padding: 20px;
-    margin: 10px; /* Space between items */
-    background-color: #e9e9e9;
-    text-align: center;
+.hero-section p { /* Matches .hero-section > p in HTML */
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.hero-section button { /* Matches button inside .hero-section */
+    background-color: #28a745;
+    color: white;
+    padding: 15px 30px;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
 }
 
-/* About Us Section */
-.about-us {
-    margin-bottom: 30px;
+/* Columns Section */
+.columns { /* Matches section class="columns" in HTML */
+    display: flex; /* Use flexbox for desktop columns */
+    flex-wrap: wrap;
+    gap: 20px; /* Space between columns */
+}
+.column { /* Matches div class="column" in HTML */
+    flex: 1; /* Each column takes equal space */
+    min-width: 300px; /* Minimum width before wrapping */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.column img { /* Matches img inside .column */
+    max-width: 100%; /* Make images responsive by default */
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+.column h2 { /* Matches h2 inside .column */
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+.column p { /* Matches p inside .column */
+    font-size: 1em;
+    margin-bottom: 0;
 }
 
-/* Site Footer */
-.site-footer {
+
+/* Footer */
+footer { /* Matches footer tag in HTML */
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
+    margin-top: 20px;
 }
 
-/* Ensure images scale down by default */
-img {
-    max-width: 100%; /* Important for all images */
-    height: auto;    /* Maintain aspect ratio */
-    display: block;  /* Remove extra space below images */
-}
-/* style.css - (existing desktop styles are above this line) */
 
 /* =========================================== */
-/* MEDIA QUERIES FOR RESPONSIVE DESIGN       */
+/* MEDIA QUERIES (FOR SMALLER SCREENS)       */
+/* These styles OVERRIDE base styles for specific screen sizes */
 /* =========================================== */
 
 /* For screens smaller than or equal to 768px (common breakpoint for tablets/laptops) */
 @media screen and (max-width: 768px) {
-    /* Mobile-specific styles will go here */
+    /* Mobile-specific adjustments */
 
-    /* ------------------------------------- */
-    /* 1. Navigation Menu Adjustments */
-    /* ------------------------------------- */
     header {
         flex-direction: column; /* Stack header content */
-        padding: 15px;
+        padding: 15px; /* Adjust padding for mobile */
     }
-    header h1 {
-        margin-bottom: 15px; /* Space between title and nav */
-        font-size: 2.2em; /* Slightly smaller title */
+    header h1 { /* Matches header > h1 */
+        margin-bottom: 15px;
+        font-size: 2.2em;
     }
-    nav ul {
-        flex-direction: column; /* Stack navigation items vertically */
-        align-items: center; /* Center them */
-        padding: 0; /* Remove default padding */
-        width: 100%; /* Make nav list full width */
+    nav ul { /* Matches nav > ul */
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        width: 100%;
     }
-    nav li {
-        margin: 5px 0; /* Add vertical margin between nav items */
-        width: 90%; /* Make each list item take up most of the width */
+    nav li { /* Matches nav > ul > li */
+        margin: 5px 0;
+        width: 90%;
         text-align: center;
     }
-    nav a {
-        padding: 10px; /* Increase tap area */
-        display: block; /* Make link fill the list item */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle separator */
+    nav a { /* Matches nav > ul > li > a */
+        padding: 10px;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
     nav li:last-child a {
-        border-bottom: none; /* No border on the last item */
+        border-bottom: none;
     }
 
-    /* ------------------------------------- */
-    /* 2. Main Layout Adjustments (Columns) */
-    /* ------------------------------------- */
-    .container {
-        margin: 10px auto; /* Reduce margin */
-        padding: 0 10px; /* Reduce padding */
+    .container { /* Matches div class="container" */
+        margin: 10px auto;
+        padding: 0 10px;
     }
-    .hero-section {
-        padding: 30px 15px; /* Reduce padding */
+    .hero-section { /* Matches section class="hero-section" */
+        padding: 30px 15px;
     }
-    .hero-section h1 {
-        font-size: 2em; /* Smaller hero heading */
+    .hero-section h1 { /* Matches .hero-section > h1 */
+        font-size: 2em;
     }
-    .hero-section p {
-        font-size: 1em; /* Smaller hero text */
+    .hero-section p { /* Matches .hero-section > p */
+        font-size: 1em;
     }
 
-    .columns {
-        flex-direction: column; /* Stack columns vertically */
-        gap: 15px; /* Adjust gap */
+    .columns { /* Matches section class="columns" */
+        flex-direction: column;
+        gap: 15px;
     }
-    .column {
-        min-width: unset; /* Remove min-width constraint */
-        width: 100%; /* Make each column full width */
-        padding: 15px; /* Adjust padding */
-    }
-
-    /* ------------------------------------- */
-    /* 3. Font Size Adjustments */
-    /* ------------------------------------- */
-    h2 {
-        font-size: 1.5em; /* Smaller heading 2 */
-    }
-    p {
-        font-size: 0.95em; /* Slightly smaller paragraph text */
+    .column { /* Matches div class="column" */
+        min-width: unset;
+        width: 100%;
+        padding: 15px;
     }
 
-    /* ------------------------------------- */
-    /* 4. Footer Adjustments */
-    /* ------------------------------------- */
+    /* General adjustments for smaller fonts in mobile */
+    h2 { /* Apply to all h2s if not more specific rules apply */
+        font-size: 1.5em;
+    }
+    p { /* Apply to all p tags */
+        font-size: 0.95em;
+    }
+
     footer {
         padding: 15px;
         font-size: 0.9em;
     }
 }
-
