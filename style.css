@@ -1,3 +1,10 @@
+/* style.css */
+
+/* =========================================== */
+/* BASE STYLES (FOR DESKTOP / LARGER SCREENS)*/
+/* These styles apply by default to all screen sizes */
+/* =========================================== */
+
 /* Universal Box-Sizing for easier layout */
 * {
     box-sizing: border-box;
